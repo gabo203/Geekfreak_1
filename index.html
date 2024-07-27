@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Freak - Software Informativo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">GEEK <span class="highlight">FREAK</span></span>
+            </div>
+            <nav class="navbar">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#inicio" class="nav-link"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                    <li class="nav-item"><a href="#acerca" class="nav-link"><i class="fas fa-info-circle"></i><span>Acerca</span></a></li>
+                    <li class="nav-item"><a href="#servicios" class="nav-link"><i class="fas fa-cogs"></i><span>Servicios</span></a></li>
+                    <li class="nav-item"><a href="#contacto" class="nav-link"><i class="fas fa-envelope"></i><span>Contacto</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h1>BIENVENIDO A <span class="highlight">GEEK FREAK</span></h1>
+            <p>Tu solución de software informativo</p>
+            <a href="#contacto" class="cta-button">COMIENZA AHORA <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <section id="acerca" class="card">
+            <h2><i class="fas fa-info-circle"></i> ACERCA DE NOSOTROS</h2>
+            <p>Geek Freak es una empresa líder en software informativo, dedicada a hacer la tecnología accesible y divertida para todos. Nuestro equipo de expertos está comprometido con la innovación y la excelencia en cada proyecto.</p>
+        </section>
+
+        <section id="servicios" class="card">
+            <h2><i class="fas fa-cogs"></i> NUESTROS SERVICIOS</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <i class="fas fa-laptop-code fa-3x"></i>
+                    <h3>Desarrollo de software personalizado</h3>
+                    <p>Creamos soluciones a medida para tus necesidades específicas.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chart-line fa-3x"></i>
+                    <h3>Consultoría tecnológica</h3>
+                    <p>Te asesoramos para optimizar tus procesos tecnológicos.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-headset fa-3x"></i>
+                    <h3>Soporte técnico 24/7</h3>
+                    <p>Estamos disponibles en todo momento para ayudarte.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="card">
+            <h2><i class="fas fa-envelope"></i> CONTACTO</h2>
+            <form id="contactForm" onsubmit="return sendEmail(event)">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <button type="submit">ENVIAR <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Geek Freak. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("service_41xpzos");
+        })();
+    </script>
+</body>
+</html>
