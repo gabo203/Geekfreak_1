@@ -15,17 +15,17 @@ document.getElementById('form')
  .addEventListener('submit', function(event) {
    event.preventDefault();
 
-   btn.value = 'Sending...';
+   btn.value = 'Enviando...';
 
    const serviceID = 'default_service';
    const templateID = 'template_9in0s6f';
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
+      btn.value = 'Mensaje Enviado';
       alert('Mensaje Enviado!');
     }, (err) => {
-      btn.value = 'Send Email';
+      btn.value = 'Mensaje Enviado';
       alert(JSON.stringify(err));
     });
 });
