@@ -8,27 +8,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-async function sendEmail(event) {
-    event.preventDefault();
-   
-    const form = document.getElementById('contactForm');
-    const formData = new FormData(form);
-   
-    try {
-        const response = await emailjs.send("service_41xpzos", "template_aa6k3ep", {
-            from_name: formData.get('name'),
-            from_email: formData.get('email'),
-            message: formData.get('message'),
-            reply_to: formData.get('email')
-        });
-       
-        console.log('SUCCESS!', response.status, response.text);
-        alert('Mensaje enviado con éxito!');
-        form.reset();
-    } catch (error) {
-        console.log('FAILED...', error);
-        alert('Error al enviar el mensaje: ' + error.message);
-    }
 
-    return false;
-}
+const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_9in0s6f';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+
+const submitButton = document.getElementById('button');
+
+submitButton.addEventListener('mouseenter', () => {
+    submitButton.style.transform = 'scale(1.05)';
+});
+
+submitButton.addEventListener('mouseleave', () => {
+    submitButton.style.transform = 'scale(1)';
+});
+
+submitButton.addEventListener('click', () => {
+    submitButton.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        submitButton.style.transform = 'scale(1)';
+    }, 100);
+});
